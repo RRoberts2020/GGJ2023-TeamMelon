@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
 
     #region [Start Screen]
-
-
-    public void QuitGame()
-    {
-
-    }
 
     #endregion
 
@@ -20,7 +15,7 @@ public class UI : MonoBehaviour
 
     #endregion
 
-    #region [Family tree Screen]
+    #region [BuffTree Screen]
 
     #endregion
 
@@ -32,5 +27,8 @@ public class UI : MonoBehaviour
 
     #endregion
 
-
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
