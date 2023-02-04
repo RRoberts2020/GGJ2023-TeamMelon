@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KillTrigger : MonoBehaviour
 {
-    public PlayerManager playerManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

@@ -21,12 +21,10 @@ namespace Platformer
 
         private bool _dashing = false;
 
-
         void Start()
         {
             _dashDuration = _initialDuration;
             _dashCooldown = _initialCooldown;
-
         }
 
         void Update()
