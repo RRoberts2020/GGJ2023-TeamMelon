@@ -9,6 +9,10 @@ namespace Platformer
         public float movingSpeed;
         public float jumpForce;
         private float _moveInput;
+        [SerializeField]
+        private int _jumpCount = 0;
+        [SerializeField]
+        private int _initialJumpCount = 0;
 
         public bool facingRight = false;
         [HideInInspector]
@@ -42,9 +46,13 @@ namespace Platformer
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, movingSpeed * Time.deltaTime);
             }
 
-            if(Input.GetKeyDown(KeyCode.Space) && _isGrounded )
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                if (_jumpCount < _initialJumpCount)
+                {
+                    _jumpCount++;
+                    rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                }
             }
 
             if(facingRight == false && _moveInput > 0)
@@ -71,6 +79,8 @@ namespace Platformer
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f);
             _isGrounded = colliders.Length > 1;
+            if (_isGrounded)
+                _jumpCount = 0;
         }
 
         /*private void OnCollisionEnter2D(Collision2D other)
