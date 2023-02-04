@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Platformer
 {
@@ -20,59 +21,26 @@ namespace Platformer
         private float _initialCooldown = 0f;
 
         private bool _dashing = false;
+        private float _horizontalDash;
 
         void Start()
         {
             _dashDuration = _initialDuration;
             _dashCooldown = _initialCooldown;
         }
-
-        void Update()
+        public void Dash(InputAction.CallbackContext context)
         {
-            Dash();
-        }
-
-        public void Dash()
-        {
-            if (_dashCooldown == _initialCooldown)
+            if(context.performed)
             {
-                if (_dashDuration != 0f && Input.GetKeyDown(KeyCode.LeftShift))
+                _dashing = true;
+                if(playerController.facingRight)
                 {
-                    _dashDuration -= Time.deltaTime;
-                    _dashing = true;
-
-                    if (playerController.facingRight == true && Input.GetKeyDown(KeyCode.LeftShift))
-                    {
-                        playerController.rb.velocity = Vector2.right * _dashSpeed;
-                        _dashCooldown -= Time.deltaTime;
-                    }
-                    else if (playerController.facingRight != true && Input.GetKeyDown(KeyCode.LeftShift))
-                    {
-                        playerController.rb.velocity = Vector2.left * _dashSpeed;
-                        _dashCooldown -= Time.deltaTime;
-                    }
+                    playerController.rb.velocity = Vector2.right * _dashSpeed;
                 }
-            }
-            else if (_dashCooldown != _initialCooldown)
-            {  
-                _dashCooldown -= Time.deltaTime;
+                else if (!playerController.facingRight)
+                {    
 
-                if (_dashing)
-                {
-                    _dashDuration -= Time.deltaTime;
                 }
-
-                if (_dashDuration < 0f)
-                {
-                    _dashing = false;
-                    playerController.rb.velocity = Vector2.zero;
-                    _dashDuration = _initialDuration;
-                }
-
-                if (_dashCooldown <= 0f)
-                {
-                    _dashCooldown = _initialCooldown;
-                }       
             }
         }
     }
