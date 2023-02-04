@@ -8,24 +8,24 @@ namespace Platformer
     {
         public float movingSpeed;
         public float jumpForce;
-        private float moveInput;
+        private float _moveInput;
 
-        private bool facingRight = false;
+        public bool facingRight = false;
         [HideInInspector]
         public bool deathState = false;
 
-        private bool isGrounded;
+        private bool _isGrounded;
         public Transform groundCheck;
 
-        private Rigidbody2D rigidbody;
-        private Animator animator;
-        private GameManager gameManager;
+        public Rigidbody2D rb;
+        private Animator _animator;
+        private GameManager _gameManager;
 
         void Start()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
-            animator = GetComponent<Animator>();
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            rb = GetComponent<Rigidbody2D>();
+            /*animator = GetComponent<Animator>();
+            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();*/
         }
 
         private void FixedUpdate()
@@ -37,27 +37,24 @@ namespace Platformer
         {
             if (Input.GetButton("Horizontal")) 
             {
-                moveInput = Input.GetAxis("Horizontal");
-                Vector3 direction = transform.right * moveInput;
+                _moveInput = Input.GetAxis("Horizontal");
+                Vector3 direction = transform.right * _moveInput;
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, movingSpeed * Time.deltaTime);
-                animator.SetInteger("playerState", 1); // Turn on run animation
             }
-            else
-            {
-                if (isGrounded) animator.SetInteger("playerState", 0); // Turn on idle animation
-            }
-            if(Input.GetKeyDown(KeyCode.Space) && isGrounded )
-            {
-                rigidbody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            }
-            if (!isGrounded)animator.SetInteger("playerState", 2); // Turn on jump animation
 
-            if(facingRight == false && moveInput > 0)
+            if(Input.GetKeyDown(KeyCode.Space) && _isGrounded )
             {
+                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            }
+
+            if(facingRight == false && _moveInput > 0)
+            {
+                rb.velocity = Vector2.zero;
                 Flip();
             }
-            else if(facingRight == true && moveInput < 0)
+            else if(facingRight == true && _moveInput < 0)
             {
+                rb.velocity = Vector2.zero;
                 Flip();
             }
         }
@@ -73,10 +70,10 @@ namespace Platformer
         private void CheckGround()
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f);
-            isGrounded = colliders.Length > 1;
+            _isGrounded = colliders.Length > 1;
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        /*private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.tag == "Enemy")
             {
@@ -86,15 +83,6 @@ namespace Platformer
             {
                 deathState = false;
             }
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject.tag == "Coin")
-            {
-                gameManager.coinsCounter += 1;
-                Destroy(other.gameObject);
-            }
-        }
+        }*/
     }
 }
