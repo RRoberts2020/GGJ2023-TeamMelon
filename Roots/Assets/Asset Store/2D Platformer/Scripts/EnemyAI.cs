@@ -6,35 +6,52 @@ namespace Platformer
 {
     public class EnemyAI : MonoBehaviour
     {
-        public float moveSpeed = 1f; 
-        public LayerMask ground;
-        public LayerMask wall;
+        [SerializeField]
+        private Rigidbody2D _enemyRB;
 
-        private Rigidbody2D rigidbody; 
-        public Collider2D triggerCollider;
-        
-        void Start()
+        public int patrolDistance = 0;
+        public float enemySpeed = 0f;
+        public bool isFacingRight;
+
+        private float _startPos;
+        private float _endPos;
+
+        public bool moveRight = true;
+
+        public void Awake()
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            _enemyRB = GetComponent<Rigidbody2D>();
+            _startPos = transform.position.x;
+            _endPos = _startPos + patrolDistance;
+            isFacingRight = transform.localScale.x > 0;
         }
 
-        void Update()
+        public void Update()
         {
-            rigidbody.velocity = new Vector2(moveSpeed, rigidbody.velocity.y);
-        }
-
-        void FixedUpdate()
-        {
-            if(!triggerCollider.IsTouchingLayers(ground) || triggerCollider.IsTouchingLayers(wall))
+            if (moveRight)
             {
-                Flip();
+                _enemyRB.AddForce(Vector2.right * enemySpeed * Time.deltaTime);
+                if (!isFacingRight)
+                    Flip();
             }
+
+            if (_enemyRB.position.x >= _endPos)
+                moveRight = false;
+
+            if (!moveRight)
+            {
+                _enemyRB.AddForce(-Vector2.right * enemySpeed * Time.deltaTime);
+                if (isFacingRight)
+                    Flip();
+            }
+            if (_enemyRB.position.x <= _startPos)
+                moveRight = true;
         }
-        
-        private void Flip()
+
+        public void Flip()
         {
-            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            moveSpeed *= -1;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            isFacingRight = transform.localScale.x > 0;
         }
     }
 }
