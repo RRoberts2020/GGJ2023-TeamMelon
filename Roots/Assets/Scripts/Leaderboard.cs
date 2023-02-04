@@ -64,11 +64,16 @@ public class Leaderboard : MonoBehaviour
 
         if (previousRunScore > PlayerPrefs.GetInt("Top Highscore", topScore))
         {
+
+            topScore = previousRunScore;
             PlayerPrefs.SetInt("Top Highscore", topScore);
+            Debug.Log(PlayerPrefs.GetInt("Top Highscore"));
+
+
             gen1Text.text = "Highscore: " + topScore.ToString();
 
-            Debug.Log("Set new top score");
-            Debug.Log(topScore);
+            //Debug.Log("Set new top score");
+            //Debug.Log(topScore);
         }
 
         if(previousRunScore > secondScore && previousRunScore < topScore)
