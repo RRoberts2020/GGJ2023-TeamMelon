@@ -12,6 +12,16 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
+        [SerializeField]
+        private float _activeSpeed;
+        [SerializeField]
+        private float _dashSpeed;
+        [SerializeField]
+        private float dashDuration;
+        [SerializeField]
+        private float dashCooldown;
+        [SerializeField]
+        private float cooldownCounter;
 
         [SerializeField]
         private int _jumpCount = 0;
@@ -45,12 +55,12 @@ namespace Platformer
         {
             rb.velocity = new Vector2(horizontal * movingSpeed, rb.velocity.y);
 
-            if(facingRight == false && _moveInput > 0)
+            if(facingRight == false && horizontal > 0)
             {
                 rb.velocity = Vector2.zero;
                 Flip();
             }
-            else if(facingRight == true && _moveInput < 0)
+            else if(facingRight == true && horizontal < 0)
             {
                 rb.velocity = Vector2.zero;
                 Flip();
