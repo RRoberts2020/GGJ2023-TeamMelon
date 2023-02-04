@@ -1,20 +1,28 @@
 fileFormatVersion: 2
+<<<<<<< main
 <<<<<<< HEAD
 guid: a63fe7bd4583ea74c8fd14706f8ce0bb
 =======
 guid: dfcc2266411a24445aebfdc66d5ef0af
 >>>>>>> final-level-blockout
+=======
+guid: c75dfef7f846d9147a87cbc5c3c1644e
+>>>>>>> Removed Dash From Prefab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
+<<<<<<< main
 <<<<<<< HEAD
     enableMipMap: 1
 =======
     enableMipMap: 0
 >>>>>>> final-level-blockout
+=======
+    enableMipMap: 0
+>>>>>>> Removed Dash From Prefab
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -45,6 +53,7 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
+<<<<<<< main
 <<<<<<< HEAD
     wrapU: 0
     wrapV: 0
@@ -54,6 +63,8 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 0
 =======
+=======
+>>>>>>> Removed Dash From Prefab
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -61,7 +72,10 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
+<<<<<<< main
 >>>>>>> final-level-blockout
+=======
+>>>>>>> Removed Dash From Prefab
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,6 +84,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
+<<<<<<< main
 <<<<<<< HEAD
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
@@ -79,6 +94,11 @@ TextureImporter:
   spriteTessellationDetail: -1
   textureType: 8
 >>>>>>> final-level-blockout
+=======
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+>>>>>>> Removed Dash From Prefab
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -87,6 +107,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+<<<<<<< main
 <<<<<<< HEAD
   applyGammaDecoding: 1
   swizzle: 50462976
@@ -96,17 +117,26 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
 >>>>>>> final-level-blockout
+=======
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+>>>>>>> Removed Dash From Prefab
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< main
 <<<<<<< HEAD
     textureCompression: 0
 =======
     textureCompression: 1
 >>>>>>> final-level-blockout
+=======
+    textureCompression: 1
+>>>>>>> Removed Dash From Prefab
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,11 +148,15 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< main
 <<<<<<< HEAD
     textureCompression: 0
 =======
     textureCompression: 1
 >>>>>>> final-level-blockout
+=======
+    textureCompression: 1
+>>>>>>> Removed Dash From Prefab
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,6 +168,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< main
 <<<<<<< HEAD
     textureCompression: 0
     compressionQuality: 50
@@ -199,6 +234,9 @@ TextureImporter:
 =======
     textureCompression: 1
 >>>>>>> final-level-blockout
+=======
+    textureCompression: 1
+>>>>>>> Removed Dash From Prefab
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -211,11 +249,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< main
 <<<<<<< HEAD
     spriteID: 
 =======
     spriteID: 5e97eb03825dee720800000000000000
 >>>>>>> final-level-blockout
+=======
+    spriteID: 5e97eb03825dee720800000000000000
+>>>>>>> Removed Dash From Prefab
     internalID: 0
     vertices: []
     indices: 
