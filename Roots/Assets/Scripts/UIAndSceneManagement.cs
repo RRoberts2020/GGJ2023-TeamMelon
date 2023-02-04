@@ -11,7 +11,7 @@ public class UIAndSceneManagement : MonoBehaviour
 
     // Bool
 
-    PlayerStats isPlayerDeadCheck;
+    PlayerManager isPlayerDeadCheck;
 
     // States
 
