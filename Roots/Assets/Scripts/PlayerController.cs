@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Platformer
 {
@@ -9,6 +10,9 @@ namespace Platformer
         public float movingSpeed;
         public float jumpForce;
         private float _moveInput;
+
+        private float horizontal;
+
         [SerializeField]
         private int _jumpCount = 0;
         [SerializeField]
@@ -39,21 +43,7 @@ namespace Platformer
 
         void Update()
         {
-            if (Input.GetButton("Horizontal")) 
-            {
-                _moveInput = Input.GetAxis("Horizontal");
-                Vector3 direction = transform.right * _moveInput;
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, movingSpeed * Time.deltaTime);
-            }
-
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                if (_jumpCount < _initialJumpCount)
-                {
-                    _jumpCount++;
-                    rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-                }
-            }
+            rb.velocity = new Vector2(horizontal * movingSpeed, rb.velocity.y);
 
             if(facingRight == false && _moveInput > 0)
             {
@@ -64,6 +54,28 @@ namespace Platformer
             {
                 rb.velocity = Vector2.zero;
                 Flip();
+            }
+        }
+
+        public void MovePlayer(InputAction.CallbackContext context)
+        {
+            horizontal = context.ReadValue<Vector2>().x;
+        }
+
+        public void JumpPlayer(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                if (_jumpCount < _initialJumpCount)
+                {
+                    _jumpCount++;
+                    rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+                }
+            }
+
+            if (rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
         }
 
@@ -82,17 +94,5 @@ namespace Platformer
             if (_isGrounded)
                 _jumpCount = 0;
         }
-
-        /*private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.tag == "Enemy")
-            {
-                deathState = true; // Say to GameManager that player is dead
-            }
-            else
-            {
-                deathState = false;
-            }
-        }*/
     }
 }
