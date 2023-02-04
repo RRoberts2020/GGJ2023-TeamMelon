@@ -336,10 +336,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 556738149}
-  _rb: {fileID: 556738148}
   _dashSpeed: 10
   _dashDuration: 0
-  _initialDuration: 0.01
+  _initialDuration: 0.5
   _dashCooldown: 0
   _initialCooldown: 6
 --- !u!50 &556738148 stripped
@@ -831,6 +830,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6952628394585513908, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952628394585513909, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 556738148}
+    - target: {fileID: 6952628394585513909, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
+      propertyPath: _initialJumpCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6952628394585513911, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
       propertyPath: m_Size.y
       value: 1.2790534
@@ -839,7 +850,8 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.00047326088
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6952628394585513800, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a3dc7dd79a2fbc341a3fc828503f1ca9, type: 3}
 --- !u!1 &1714871988
