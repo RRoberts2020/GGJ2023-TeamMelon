@@ -15,27 +15,16 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
-        [SerializeField]
-        private float _activeSpeed;
-        [SerializeField]
-        private float _dashSpeed;
-        [SerializeField]
-        private float dashDuration;
-        [SerializeField]
-        private float dashCooldown;
-        [SerializeField]
-        private float cooldownCounter;
 
         [SerializeField]
         private int _jumpCount = 0;
-        [SerializeField]
-        private int _initialJumpCount = 0;
+        public int initialJumpCount = 0;
 
         public bool facingRight = false;
         [HideInInspector]
         public bool deathState = false;
 
-        private bool _isGrounded;
+        public bool _isGrounded;
         public Transform groundCheck;
 
         public Rigidbody2D rb;
@@ -63,12 +52,12 @@ namespace Platformer
         {
             rb.velocity = new Vector2(horizontal * movingSpeed, rb.velocity.y);
 
-            if(facingRight == false && horizontal > 0)
+            if(facingRight == true && horizontal > 0)
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
-            else if(facingRight == true && horizontal < 0)
+            else if(facingRight == false && horizontal < 0)
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
@@ -85,7 +74,7 @@ namespace Platformer
         {
             if (context.performed)
             {
-                if (_jumpCount < _initialJumpCount)
+                if (_jumpCount < initialJumpCount)
                 {
                     _jumpCount++;
                     rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
