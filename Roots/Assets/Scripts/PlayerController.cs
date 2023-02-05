@@ -57,12 +57,12 @@ namespace Platformer
 
             if(facingRight == false && horizontal > 0)
             {
-                rb.velocity = Vector2.zero;
+                rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
             else if(facingRight == true && horizontal < 0)
             {
-                rb.velocity = Vector2.zero;
+                rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
         }
