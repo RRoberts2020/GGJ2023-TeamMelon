@@ -18,14 +18,13 @@ namespace Platformer
 
         [SerializeField]
         private int _jumpCount = 0;
-        [SerializeField]
-        private int _initialJumpCount = 0;
+        public int initialJumpCount = 0;
 
         public bool facingRight = false;
         [HideInInspector]
         public bool deathState = false;
 
-        private bool _isGrounded;
+        public bool _isGrounded;
         public Transform groundCheck;
 
         public Rigidbody2D rb;
@@ -75,7 +74,7 @@ namespace Platformer
         {
             if (context.performed)
             {
-                if (_jumpCount < _initialJumpCount)
+                if (_jumpCount < initialJumpCount)
                 {
                     _jumpCount++;
                     rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
