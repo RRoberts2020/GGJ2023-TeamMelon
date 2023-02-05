@@ -15,7 +15,7 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
-        private bool _moving = false;
+        private bool _moving = true;
 
         [SerializeField]
         private int _jumpCount = 0;
