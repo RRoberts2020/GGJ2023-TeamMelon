@@ -42,17 +42,14 @@ namespace Platformer
         private Animator _animator;
         private GameManager _gameManager;
 
-        //used for checkpoint system
-        private LevelManager levelManager;
+  
 
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
 
-            //checkpoint testing
-            levelManager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
-            transform.position = levelManager.lastPlayerPos;
+    
             /*animator = GetComponent<Animator>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();*/
         }
@@ -75,12 +72,6 @@ namespace Platformer
             {
                 rb.velocity = Vector2.zero;
                 Flip();
-            }
-
-            //checkpoint testing
-            if(Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 
         }
