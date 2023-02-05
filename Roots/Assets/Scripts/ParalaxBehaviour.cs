@@ -22,6 +22,7 @@ public class ParalaxBehaviour : MonoBehaviour
         Texture2D texture = sprite.texture;
         textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
         textureUnitSizeY = texture.height / sprite.pixelsPerUnit;
+        Debug.Log("git fix");
 
     }
 
