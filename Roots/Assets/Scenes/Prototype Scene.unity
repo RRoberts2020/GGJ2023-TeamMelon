@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final Level
       objectReference: {fileID: 0}
+    - target: {fileID: 4777347138190842, guid: 2320d5df268c38b498ef4c2ecb985a7b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1930023512757963936, guid: 2320d5df268c38b498ef4c2ecb985a7b, type: 3}
       propertyPath: m_RootOrder
       value: 3
