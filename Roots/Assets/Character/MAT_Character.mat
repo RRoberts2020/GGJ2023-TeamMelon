@@ -75,7 +75,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FPS: 10
+    - _FPS: 0
     - _Frames: 8
     - _Long_Hair: 0
     - _TYPE_OF_HAT: 0
