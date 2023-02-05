@@ -5262,11 +5262,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f355b87f1955cee45aa2bfc353689cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffAllocator: 0
+  jumpBuff1Bool: 0
+  speedBuff1Bool: 0
+  jumpBuff2Bool: 0
+  speedBuff2Bool: 0
+  jumpBuff3Bool: 0
+  speedBuff3Bool: 0
+  jumpBuff4Bool: 0
+  speedBuff4Bool: 0
   StartScreen: {fileID: 1145635246}
   MainScreen: {fileID: 1763543051}
   BuffTreeScreen: {fileID: 644637307}
   ChooseScreen: {fileID: 759316551}
   GameOverScreen: {fileID: 406729658}
+  jumpBuff1: {fileID: 1097351821}
+  speedBuff1: {fileID: 1046027566}
+  jumpBuff2: {fileID: 1077668813}
+  speedBuff2: {fileID: 888760062}
+  jumpBuff3: {fileID: 1515792780}
+  speedBuff3: {fileID: 94254353}
+  jumpBuff4: {fileID: 708947895}
+  speedBuff4: {fileID: 364467242}
 --- !u!114 &1706499889
 MonoBehaviour:
   m_ObjectHideFlags: 0
