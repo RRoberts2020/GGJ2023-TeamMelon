@@ -253,7 +253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 51807794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1861542291}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: ChoiceOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &51807794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endGamePanel: {fileID: 1748251754}
+  playerController: {fileID: 1174253400}
+  _checkPoint: {fileID: 0}
 --- !u!1 &701332786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1230,14 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 49475588}
+    - target: {fileID: 1153296425605907543, guid: 1422f38e366610844b58d5adaff86399, type: 3}
+      propertyPath: initialJumpCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153296425605907543, guid: 1422f38e366610844b58d5adaff86399, type: 3}
+      propertyPath: _initialJumpCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1153296425605907627, guid: 1422f38e366610844b58d5adaff86399, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1401,6 +1423,17 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &1174253400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1153296425605907543, guid: 1422f38e366610844b58d5adaff86399, type: 3}
+  m_PrefabInstance: {fileID: 987565989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174253387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8367f8f5ad069264c8b1b800b031e6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1197842355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,6 +1559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endGamePanel: {fileID: 1748251754}
+  playerController: {fileID: 1174253400}
+  _checkPoint: {fileID: 0}
 --- !u!1 &1210985290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1644,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1210985293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1861542291}
+        m_TargetAssemblyTypeName: AbilityManager, Assembly-CSharp
+        m_MethodName: ChoiceTwo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1210985293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,6 +1851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endGamePanel: {fileID: 1748251754}
+  playerController: {fileID: 1174253400}
+  _checkPoint: {fileID: 0}
 --- !u!1 &1573497354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,7 +2081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1748251755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2344,6 +2393,7 @@ GameObject:
   - component: {fileID: 1861542288}
   - component: {fileID: 1861542287}
   - component: {fileID: 1861542290}
+  - component: {fileID: 1861542291}
   m_Layer: 0
   m_Name: EndPoint1
   m_TagString: Exit
@@ -2364,7 +2414,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0063631535, y: 0.49354398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2375,7 +2425,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1654468, y: 3.3615706}
   m_EdgeRadius: 0
 --- !u!212 &1861542288
 SpriteRenderer:
@@ -2457,6 +2507,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endGamePanel: {fileID: 1748251754}
+  playerController: {fileID: 1174253400}
+  _checkPoint: {fileID: 1861542286}
+--- !u!114 &1861542291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861542286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f279b725686c04ab3314fd28708ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1174253400}
+  checkpoint: {fileID: 1861542290}
 --- !u!1 &2110344738
 GameObject:
   m_ObjectHideFlags: 0
