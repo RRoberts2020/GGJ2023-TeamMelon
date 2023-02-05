@@ -15,16 +15,6 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
-        [SerializeField]
-        private float _activeSpeed;
-        [SerializeField]
-        private float _dashSpeed;
-        [SerializeField]
-        private float dashDuration;
-        [SerializeField]
-        private float dashCooldown;
-        [SerializeField]
-        private float cooldownCounter;
 
         [SerializeField]
         private int _jumpCount = 0;

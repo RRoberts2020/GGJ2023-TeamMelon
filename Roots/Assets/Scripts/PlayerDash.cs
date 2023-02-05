@@ -9,40 +9,51 @@ namespace Platformer
     {
         public PlayerController playerController;
 
-        [SerializeField]
-        private float _dashSpeed = 0f;
-        [SerializeField]
-        private float _dashDuration = 0f;
-        [SerializeField]
-        private float _initialDuration = 0f;
-        [SerializeField]
-        private float _dashCooldown = 0f;
-        [SerializeField]
-        private float _initialCooldown = 0f;
+        [SerializeField] private bool _ableToDash = true;
+        [SerializeField] private bool _doDash = false;
+        [SerializeField] private float _dashSpeed = 0f;
+        [SerializeField] private float _dashDuration = 0f;
+        [SerializeField] private float _initialDuration = 0f;
+        [SerializeField] private float _dashCooldown = 0f;
+        [SerializeField] private float _initialCooldown = 0f;
 
-        private bool _dashing = false;
-        private float _horizontalDash;
+        private float _normalGravity;
+        private float _waitTime;
 
-        void Start()
+        private void Awake()
         {
+            _normalGravity = playerController.rb.gravityScale;
+            _ableToDash = true;
             _dashDuration = _initialDuration;
-            _dashCooldown = _initialCooldown;
         }
+
+        private void Update()
+        {
+            /*if(_doDash)
+            {
+                return;
+            }*/
+        }
+
         public void Dash(InputAction.CallbackContext context)
         {
-            if(context.performed)
+            if (context.performed)
             {
-                _dashing = true;
-                if(playerController.facingRight)
-                {
-                    playerController.rb.velocity = Vector2.right * _dashSpeed;
-                }
-                else if (!playerController.facingRight)
-                {    
-
-                }
+                StartCoroutine(Dash());
             }
+        }
+
+        IEnumerator Dash()
+        {
+            _ableToDash = false;
+            _doDash = true;
+            playerController.rb.AddForce(-transform.right * (_dashSpeed * 100));
+            yield return new WaitForSeconds(_dashDuration);
+            _doDash = false;
+            yield return new WaitForSeconds(_dashCooldown);
+            _ableToDash = true;
         }
     }
 }
+
     
