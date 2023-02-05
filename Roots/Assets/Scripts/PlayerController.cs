@@ -15,7 +15,7 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
-        private bool _moving = true;
+     //   private bool _moving = true;
 
         [SerializeField]
         private int _jumpCount = 0;
@@ -68,19 +68,19 @@ namespace Platformer
             }
 
             
-            if(_moving)
+            //if(_moving)
             {
-                _walkSound.Play();
+              
             }
-            else
+           // else
             {
-                _walkSound.enabled = false;
+              //  _walkSound.enabled = false;
             }
         }
 
         public void MovePlayer(InputAction.CallbackContext context)
         {
-           
+             _walkSound.Play();
             horizontal = context.ReadValue<Vector2>().x;
            
         }
