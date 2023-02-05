@@ -47,6 +47,10 @@ public class UIAndSceneManagement : MonoBehaviour
 
     // Gameobject
 
+    public GameObject jumpButton;
+
+    public GameObject speedButton;
+
     public GameObject jumpBuff1;
 
     public GameObject speedBuff1;
@@ -105,6 +109,54 @@ public class UIAndSceneManagement : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    //Section 1
+    public void jumpbuffButtonTrigger1()
+    {
+        buffAllocator++;
+        jumpBuff1Bool = true;
+    }
+    public void speedbuffButtonTrigger1()
+    {
+        buffAllocator++;
+        speedBuff1Bool = true;
+    }
+
+    //Section 2
+    public void jumpbuffButtonTrigger2()
+    {
+        buffAllocator++;
+        jumpBuff2Bool = true;
+    }
+    public void speedbuffButtonTrigger2()
+    {
+        buffAllocator++;
+        speedBuff2Bool = true;
+    }
+
+    //Section 3
+    public void jumpbuffButtonTrigger3()
+    {
+        buffAllocator++;
+        jumpBuff3Bool = true;
+    }
+    public void speedbuffButtonTrigger3()
+    {
+        buffAllocator++;
+        speedBuff3Bool = true;
+    }
+
+    //Section 4
+    public void jumpbuffButtonTrigger4()
+    {
+        buffAllocator++;
+        jumpBuff4Bool = true;
+    }
+    public void speedbuffButtonTrigger4()
+    {
+        buffAllocator++;
+        speedBuff4Bool = true;
     }
 
     #endregion
@@ -195,7 +247,7 @@ public class UIAndSceneManagement : MonoBehaviour
 
     #endregion
 
-    #region [GameOver Screen]
+    #region [Lose GameOver Screen]
 
 
     private void GameOverState()
