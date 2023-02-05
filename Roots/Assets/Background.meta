@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 63be635cabab47e40b1f7a0ad90b0978
@@ -12,6 +13,9 @@ guid: b59b1b8c2ea8c02429cee435247c645c
 guid: c35c4b1f3d8254249b5872e408fb484e
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+guid: 6588f40753e40494588c45ad8be0c0b9
+>>>>>>> final-paralax
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
 guid: 4d4631d3cc341914abe22bc6578669f0
@@ -12,6 +13,9 @@ guid: 35384b0a67e3fa649b65c61a39d729c2
 guid: 558c23707d6519e49b4585fdecce5827
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+guid: 0e22a0f548759487da3ae39308f7711a
+>>>>>>> final-paralax
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -115,6 +119,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
   - serializedVersion: 3
@@ -178,6 +183,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
 >>>>>>> Stashed changes
+=======
+>>>>>>> final-paralax
   spriteSheet:
     serializedVersion: 2
     sprites: []
