@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -18,12 +19,19 @@ public class PlayerManager : MonoBehaviour
 
     //Player buffs?
 
+    //used for checkpoint system
+    private LevelManager levelManager;
+
 
     #endregion
 
     // Start is called before the first frame update
     public void Start()
     {
+        //checkpoint testing
+        levelManager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
+        transform.position = levelManager.lastPlayerPos;
+
         playerHealth = 3;
 
         isPlayerDead = false;
@@ -40,7 +48,15 @@ public class PlayerManager : MonoBehaviour
         if (playerHealth == 0)
         {
             isPlayerDead = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            playerHealth--;
         }
     }
+
+   
 
 }
