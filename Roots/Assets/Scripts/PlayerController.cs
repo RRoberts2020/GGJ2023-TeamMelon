@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//Temp for checkpoint testing
+using UnityEngine.SceneManagement;
+
 namespace Platformer
 {
     public class PlayerController : MonoBehaviour
@@ -39,9 +42,14 @@ namespace Platformer
         private Animator _animator;
         private GameManager _gameManager;
 
+  
+
+
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+
+    
             /*animator = GetComponent<Animator>();
             gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();*/
         }
@@ -57,14 +65,15 @@ namespace Platformer
 
             if(facingRight == false && horizontal > 0)
             {
-                rb.velocity = Vector2.zero;
+                rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
             else if(facingRight == true && horizontal < 0)
             {
-                rb.velocity = Vector2.zero;
+                rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
+
         }
 
         public void MovePlayer(InputAction.CallbackContext context)

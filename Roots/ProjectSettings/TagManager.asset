@@ -5,16 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Level Manager
+  - Exit
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 
   - 
-  - 
+  - Player
   - Ground
   - Wall
   - 
@@ -41,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1662593539
     locked: 0
