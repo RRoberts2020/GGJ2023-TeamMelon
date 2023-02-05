@@ -1,17 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-guid: 7ff773ad6883acb4284e6a08ef3dea3b
-=======
-guid: 2eb7fa7b81f4fa14191e29d14257a88d
->>>>>>> main
-=======
-<<<<<<< Updated upstream
-guid: 2eb7fa7b81f4fa14191e29d14257a88d
-=======
-guid: 91afb1e95fd81c14aba2f385dc4892ea
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+guid: b861cc419f84a394b82699cb6d4d2efc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -115,8 +103,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< Updated upstream
-=======
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -177,7 +163,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> Stashed changes
   spriteSheet:
     serializedVersion: 2
     sprites: []
