@@ -14,6 +14,8 @@ public class PlayerCombat : MonoBehaviour
 
     public LayerMask enemyLayers;
 
+    public AudioSource _attackSound;
+
     void Start()
     {
         
@@ -27,6 +29,7 @@ public class PlayerCombat : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Attack();
+                _attackSound.Play();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }

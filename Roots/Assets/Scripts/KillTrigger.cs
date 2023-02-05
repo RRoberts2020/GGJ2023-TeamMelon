@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class KillTrigger : MonoBehaviour
 {
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            GameObject.Destroy(collision.gameObject);
+        {
+
+              GameObject.Destroy(collision.gameObject);
+         
+        }
+          
     }
 }

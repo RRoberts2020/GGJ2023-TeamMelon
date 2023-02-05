@@ -15,6 +15,7 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
+        private bool _moving = false;
 
         [SerializeField]
         private int _jumpCount = 0;
@@ -31,7 +32,10 @@ namespace Platformer
         private Animator _animator;
         private GameManager _gameManager;
 
-  
+        public AudioSource _jumpSound;
+        public AudioSource _walkSound;
+
+        public AudioSource _landSound;
 
 
         void Start()
@@ -63,11 +67,22 @@ namespace Platformer
                 Flip();
             }
 
+            
+            if(_moving)
+            {
+                _walkSound.Play();
+            }
+            else
+            {
+                _walkSound.enabled = false;
+            }
         }
 
         public void MovePlayer(InputAction.CallbackContext context)
         {
+           
             horizontal = context.ReadValue<Vector2>().x;
+           
         }
 
         public void JumpPlayer(InputAction.CallbackContext context)
@@ -76,6 +91,8 @@ namespace Platformer
             {
                 if (_jumpCount < initialJumpCount)
                 {
+                    _jumpSound.Play();
+
                     _jumpCount++;
                     rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                 }
@@ -99,8 +116,13 @@ namespace Platformer
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f);
             _isGrounded = colliders.Length > 1;
+          
             if (_isGrounded)
+            {
+
                 _jumpCount = 0;
+            }
+          
         }
     }
 }

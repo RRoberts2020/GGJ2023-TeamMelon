@@ -25,6 +25,12 @@ public class UIAndSceneManagement : MonoBehaviour
 
     public GameObject GameOverScreen;
 
+    public AudioSource _gameMusic;
+
+    public AudioSource _gameOverMusic;
+
+    public AudioSource _gameStartMusic;
+
     #endregion
 
     #region [Functions]
@@ -43,6 +49,7 @@ public class UIAndSceneManagement : MonoBehaviour
         if (isPlayerDeadCheck.isPlayerDead == true)
         {
             GameOverState();
+            _gameOverMusic.Play();
         }
     }
 
