@@ -2324,7 +2324,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"960a6fa5340ec1c45b1244e9e8992b85\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"1ea3eee789b32db45bd3d276ded7a23e\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -4488,7 +4488,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"13a0bcefdb782334b9bb2f9478b10c47\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"9b1282c5a0e5a6e428435c804282f8fd\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -4838,7 +4838,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"2d777f2fd24ccc5438065bcd68c36e0b\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"7409bf1a65fa9294babf490992323c87\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -6161,7 +6161,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"a3ce32a2edcfd564b8746da1fdf42a6d\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"3156d0aca9625db4687fca825a7ee6ed\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -6576,7 +6576,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"3b95470e8591d574fa69619b105f64c3\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"d0b569b9b66994343bdf4f5b34cd000c\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -7165,7 +7165,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"c9d31eede4889bd4ca1cf6a045e29577\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"5c0627482a206614b883d03832d1e8f2\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
