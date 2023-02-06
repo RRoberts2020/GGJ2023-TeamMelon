@@ -24,6 +24,7 @@ namespace Platformer
         {
             if (collision.tag == "Player")
             {
+                Debug.Log("Trigger");
                 _makingChoice = true;
                 Decision();
             }
