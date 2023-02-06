@@ -7,51 +7,83 @@ namespace Platformer
     public class EnemyAI : MonoBehaviour
     {
         [SerializeField]
-        private Rigidbody2D _enemyRB;
-
-        public int patrolDistance = 0;
-        public float enemySpeed = 0f;
-        public bool isFacingRight;
-
+        private float _movingSpeed = 0f;
+        [SerializeField]
+        private bool _facingRight;
+        [SerializeField]
+        private Rigidbody2D _rb;
+        [SerializeField]
         private float _startPos;
+        [SerializeField]
         private float _endPos;
+        [SerializeField]
+        private float _patrolDistance;
+        [SerializeField]
+        private GameObject _enemy;
 
-        public bool moveRight = true;
+        private float _initialStartPos;
 
-        public void Awake()
+
+        void Start()
         {
-            _enemyRB = GetComponent<Rigidbody2D>();
-            _startPos = transform.position.x;
-            _endPos = _startPos + patrolDistance;
-            isFacingRight = transform.localScale.x > 0;
+            _startPos = _enemy.transform.position.x;
+            _endPos = _enemy.transform.position.x + _patrolDistance;
+            Flip();
         }
 
-        public void Update()
+
+        void Update()
         {
-            if (moveRight)
-            {
-                _enemyRB.AddForce(Vector2.right * enemySpeed * Time.deltaTime);
-                if (!isFacingRight)
-                    Flip();
-            }
-
-            if (_enemyRB.position.x >= _endPos)
-                moveRight = false;
-
-            if (!moveRight)
-            {
-                _enemyRB.AddForce(-Vector2.right * enemySpeed * Time.deltaTime);
-                if (isFacingRight)
-                    Flip();
-            }
-            if (_enemyRB.position.x <= _startPos)
-                moveRight = true;
+            Debug.Log(_enemy.transform.position.x);
+            MoveEnemy();
+            Patrol();
         }
 
-        public void Flip()
+        private void MoveEnemy()
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            isFacingRight = transform.localScale.x > 0;
+            if (_facingRight)
+            {
+                _rb.velocity = new Vector2(_movingSpeed, _rb.velocity.y);
+            }
+            else if (!_facingRight)
+            {
+                _rb.velocity = new Vector2(-_movingSpeed, _rb.velocity.y);
+            }
+        }
+
+        private void Patrol()
+        {
+            if (_facingRight && _enemy.transform.position.x >= _endPos)
+            {
+                //_rb.velocity = new Vector2(-_movingSpeed, _rb.velocity.y);
+                Flip();
+            }
+            else if (!_facingRight && _enemy.transform.position.x <= _startPos)
+            {
+                //_rb.velocity = new Vector2(_movingSpeed, _rb.velocity.y);
+                Debug.Log("Right");
+                Flip();
+            }
+        }
+        
+
+        private void Flip()
+        {
+            _facingRight = !_facingRight;
+            Vector3 Scaler = transform.localScale;
+            Scaler.x *= -1;
+            transform.localScale = Scaler;
+
+            /*if (_facingRight && _enemy.transform.position.x >= _endPos)
+            {
+                Debug.Log("Left");
+                _endPos = _startPos - _patrolDistance;
+            }
+            else if (!_facingRight && _enemy.transform.position.x >= _endPos)
+            {
+                Debug.Log("Right");
+                _endPos = _startPos + _patrolDistance;
+            } */
         }
     }
 }
