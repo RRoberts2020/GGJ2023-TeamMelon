@@ -22,6 +22,8 @@ public class PlayerManager : MonoBehaviour
     //used for checkpoint system
     private LevelManager levelManager;
 
+    public AudioSource _playerhurtsound;
+    public AudioSource _playerdeadsound;
 
     #endregion
 
@@ -43,12 +45,14 @@ public class PlayerManager : MonoBehaviour
         if (isPlayerDamaged == true)
         {
             playerHealth = -1;
+            _playerhurtsound.Play();
         }
 
         if (playerHealth == 0)
         {
             isPlayerDead = true;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _playerdeadsound.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
