@@ -82,12 +82,12 @@ Material:
     - _Wear_Beanie: 0
     - _Wear_Earrings: 0
     - _Wear_Glasses: 0
-    - _Wear_Hat: 0
+    - _Wear_Hat: 1
     m_Colors:
     - _Beanie_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Character_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Earring_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Glasses_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Hair_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
-    - _Hat_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Hat_Colour_Tint: {r: 0.34062994, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
