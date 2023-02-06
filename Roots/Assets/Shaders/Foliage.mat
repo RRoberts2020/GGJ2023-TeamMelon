@@ -58,10 +58,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _WindInfluenceMask: 0.15
-    - _WindScale: 0.5
-    - _WindSpeed: 5
-    - _WindStrength: 0.1
+    - _WindInfluenceMask: 1.08
+    - _WindScale: 1.5
+    - _WindSpeed: 1.5
+    - _WindStrength: 0.22
     m_Colors:
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
