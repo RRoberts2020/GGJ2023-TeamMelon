@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-//Temp for checkpoint testing
 using UnityEngine.SceneManagement;
 
 namespace Platformer
@@ -15,7 +13,6 @@ namespace Platformer
         private float _moveInput;
 
         private float horizontal;
-     //   private bool _moving = true;
 
         [SerializeField]
         private int _jumpCount = 0;
@@ -41,10 +38,6 @@ namespace Platformer
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-
-    
-            /*animator = GetComponent<Animator>();
-            gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();*/
         }
 
         private void FixedUpdate()
@@ -66,21 +59,11 @@ namespace Platformer
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
-
-            
-            //if(_moving)
-            {
-              
-            }
-           // else
-            {
-              //  _walkSound.enabled = false;
-            }
         }
 
         public void MovePlayer(InputAction.CallbackContext context)
         {
-             _walkSound.Play();
+            //_walkSound.Play();
             horizontal = context.ReadValue<Vector2>().x;
            
         }
@@ -91,7 +74,7 @@ namespace Platformer
             {
                 if (_jumpCount < initialJumpCount)
                 {
-                    _jumpSound.Play();
+                    //_jumpSound.Play();
 
                     _jumpCount++;
                     rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -119,7 +102,6 @@ namespace Platformer
           
             if (_isGrounded)
             {
-
                 _jumpCount = 0;
             }
           
