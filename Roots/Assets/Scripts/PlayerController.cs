@@ -63,19 +63,28 @@ namespace Platformer
 
         public void MovePlayer(InputAction.CallbackContext context)
         {
-            //_walkSound.Play();
-            horizontal = context.ReadValue<Vector2>().x;
-           
+            if (context.performed)
+            {
+                if (_isGrounded)
+                {
+                    _walkSound.Play();
+                }
+                horizontal = context.ReadValue<Vector2>().x;
+            }
+            else if (context.canceled)
+            {
+                _walkSound.Stop();
+                horizontal = 0;
+            }
         }
 
         public void JumpPlayer(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
+                _walkSound.Stop();
                 if (_jumpCount < initialJumpCount)
-                {
-                    //_jumpSound.Play();
-
+                {                   
                     _jumpCount++;
                     rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                 }
