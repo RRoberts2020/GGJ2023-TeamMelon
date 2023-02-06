@@ -55,12 +55,10 @@ namespace Platformer
         {
             if (_facingRight && _enemy.transform.position.x >= _endPos)
             {
-                //_rb.velocity = new Vector2(-_movingSpeed, _rb.velocity.y);
                 Flip();
             }
             else if (!_facingRight && _enemy.transform.position.x <= _startPos)
             {
-                //_rb.velocity = new Vector2(_movingSpeed, _rb.velocity.y);
                 Debug.Log("Right");
                 Flip();
             }
@@ -73,17 +71,6 @@ namespace Platformer
             Vector3 Scaler = transform.localScale;
             Scaler.x *= -1;
             transform.localScale = Scaler;
-
-            /*if (_facingRight && _enemy.transform.position.x >= _endPos)
-            {
-                Debug.Log("Left");
-                _endPos = _startPos - _patrolDistance;
-            }
-            else if (!_facingRight && _enemy.transform.position.x >= _endPos)
-            {
-                Debug.Log("Right");
-                _endPos = _startPos + _patrolDistance;
-            } */
         }
     }
 }
