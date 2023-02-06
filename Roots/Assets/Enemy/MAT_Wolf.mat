@@ -60,7 +60,7 @@ Material:
     m_Floats:
     - _FPS: 10
     - _Frames: 6
-    - _Is_Walking: 0
+    - _Is_Walking: 1
     m_Colors:
     - _Wolf_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
