@@ -61,6 +61,8 @@ Material:
     - _FPS: 10
     - _Frames: 6
     - _Is_Walking: 1
+    - _Is_Wolf_Hurt: 0
     m_Colors:
     - _Wolf_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Wolf_Hurt_Tint: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
