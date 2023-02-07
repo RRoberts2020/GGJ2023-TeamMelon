@@ -10,6 +10,16 @@ public class enemy : MonoBehaviour
     public AudioClip _DieSound;
 
 
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public int enemyAttackDamage = 20;
+    public float attackRate = 2f;
+    private float nextAttackTime = 0;
+
+
+    public AudioSource _attackSound;
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -30,8 +40,43 @@ public class enemy : MonoBehaviour
             Die();
             
         }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            EnemyAttack();
+        }
 
+    }
+
+    void EnemyAttack()
+    {
+        Debug.Log("Enemy attacked");
+        if (Time.time >= nextAttackTime)
+        {
+            Collider2D[] playerHit = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+
+            foreach (Collider2D player in playerHit)
+            {
+                Debug.Log("Made it to foreach loop");
+                player.GetComponent<PlayerManager>().TakeDamage(enemyAttackDamage);
+            }
+            _attackSound.Play();
+        }
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+
+        if (attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     void Die()
