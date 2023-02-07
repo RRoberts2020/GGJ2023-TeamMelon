@@ -34,7 +34,7 @@ namespace Platformer
 
         void Update()
         {
-            Debug.Log(_enemy.transform.position.x);
+//            Debug.Log(_enemy.transform.position.x);
             MoveEnemy();
             Patrol();
         }

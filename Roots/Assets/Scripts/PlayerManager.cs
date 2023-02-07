@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     public GameObject player;
+    public AudioClip[] playerHurt;
 
     #region [Varibles]
 
@@ -22,7 +23,6 @@ public class PlayerManager : MonoBehaviour
     //used for checkpoint system
     private LevelManager levelManager;
 
-    public AudioSource _playerhurtsound;
     public AudioSource _playerdeadsound;
 
     #endregion
@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
     {
         //checkpoint testing
         levelManager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
-        transform.position = levelManager.lastPlayerPos;
+        //transform.position = levelManager.lastPlayerPos;
 
         playerHealth = 3;
 
@@ -42,25 +42,30 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (isPlayerDamaged == true)
-        {
-            playerHealth = -1;
-            _playerhurtsound.Play();
-        }
+      
 
-        if (playerHealth == 0)
-        {
-            isPlayerDead = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            _playerdeadsound.Play();
-        }
+  
+    }
 
-        if (Input.GetKeyDown(KeyCode.R))
+    public void TakeDamage(int damage)
+    {
+        playerHealth--;
+        AudioSource.PlayClipAtPoint(playerHurt[Random.Range(0, 1)], transform.position);
+        if (playerHealth <= 0)
         {
-            playerHealth--;
+            PlayerDeath();
+
         }
     }
 
-   
+    public void PlayerDeath()
+    {
+        Destroy(gameObject);
+        isPlayerDead = true;
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+
+
 
 }

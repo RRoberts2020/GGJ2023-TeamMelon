@@ -8,25 +8,9 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1127137393585147292, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: _patrolDistance
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
       propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.879774
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.0253
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.0253
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1127137393585147302, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
       propertyPath: m_Name
-      value: Wolf
+      value: Wolf Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
