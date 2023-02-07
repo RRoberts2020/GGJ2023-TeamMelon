@@ -22,10 +22,10 @@ public class FlickerControl : MonoBehaviour
     {
         isFlickering = true;
         this.gameObject.GetComponent<Light2D>().enabled = false;
-        timeDelay = Random.Range(0.01f, 0.5f);
+        timeDelay = Random.Range(0.01f, 2.0f);
         yield return new WaitForSeconds(timeDelay);
         this.gameObject.GetComponent<Light2D>().enabled = true;
-        timeDelay = Random.Range(0.01f, 0.2f);
+        timeDelay = Random.Range(0.01f, 1.0f);
         yield return new WaitForSeconds(timeDelay);
         isFlickering = false;
     }
