@@ -13,10 +13,14 @@ namespace Platformer
         private bool _makingChoice;
         public GameObject _checkPoint;
 
+        public  SpriteRenderer spriteRenderer;
+        public Sprite treeSprite;
+
         void Start()
         {
             endGamePanel.SetActive(false);
             levelManager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             _makingChoice = false;
         }
 
@@ -25,6 +29,10 @@ namespace Platformer
             if (collision.tag == "Player")
             {
                 Debug.Log("Trigger");
+
+
+                spriteRenderer.sprite = treeSprite;
+
                 _makingChoice = true;
                 Decision();
             }

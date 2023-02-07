@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        Destroy(gameObject);
+        
         isPlayerDead = true;
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
