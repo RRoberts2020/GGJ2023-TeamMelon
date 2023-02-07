@@ -7,7 +7,7 @@ public class enemy : MonoBehaviour
 
     public int maxHealth = 100;
     private int currentHealth;
-    public AudioSource _DieSound;
+    public AudioClip _DieSound;
 
 
     void Start()
@@ -28,7 +28,7 @@ public class enemy : MonoBehaviour
         if(currentHealth <=0)
         {
             Die();
-            _DieSound.Play();
+            
         }
 
 
@@ -36,7 +36,8 @@ public class enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Dead");
+        AudioSource.PlayClipAtPoint(_DieSound, transform.position);
+        Destroy(gameObject);
     }
 
 }

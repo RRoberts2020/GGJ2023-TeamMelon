@@ -8,25 +8,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1127137393585147289, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 5c9f7908aa252e34eb0b2d851dde3165, type: 2}
     - target: {fileID: 1127137393585147292, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
       propertyPath: _patrolDistance
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.879774
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.0253
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.0253
       objectReference: {fileID: 0}
     - target: {fileID: 1127137393585147293, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,6 +64,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wolf
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1127137393585147302, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928299314583119335, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
+      propertyPath: _DieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f359ae4c1748ef4c965c5150922ad7e, type: 3}
+    - target: {fileID: 2928299314583119335, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3363063114137635149, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: fc70cb86870a63a4e9559baf5f670de3, type: 3}
