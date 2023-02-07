@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
     public GameObject player;
     public AudioClip[] playerHurt;
+    public Sprite emptyHearts;
+    public Sprite fullHearts;
+    public Image[] hearts;
+
 
     #region [Varibles]
 
     // int
     public int playerHealth;
+    public int maxHealth;
 
     // bool
     public bool isPlayerDamaged;
-
+//
     public bool isPlayerDead;
 
-    //Player buffs?
 
     //used for checkpoint system
     private LevelManager levelManager;
@@ -34,15 +39,37 @@ public class PlayerManager : MonoBehaviour
         levelManager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
         //transform.position = levelManager.lastPlayerPos;
 
-        playerHealth = 3;
+       
 
-        isPlayerDead = false;
+       // isPlayerDead = false;
     }
 
     // Update is called once per frame
     public void Update()
     {
-      
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if(i < playerHealth)
+            {
+                hearts[i].sprite = fullHearts;
+            }
+            else
+            {
+               hearts[i].sprite = emptyHearts;
+
+            }
+
+            if(i < maxHealth)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+
+
+        }
 
   
     }
@@ -61,7 +88,7 @@ public class PlayerManager : MonoBehaviour
     public void PlayerDeath()
     {
         
-        isPlayerDead = true;
+       // isPlayerDead = true;
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
