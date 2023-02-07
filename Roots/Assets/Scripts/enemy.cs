@@ -81,6 +81,7 @@ public class enemy : MonoBehaviour
 
     void Die()
     {
+        Debug.Log("Dead");
         AudioSource.PlayClipAtPoint(_DieSound, transform.position);
         Destroy(gameObject);
     }

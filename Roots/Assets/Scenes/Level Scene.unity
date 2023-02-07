@@ -43914,7 +43914,7 @@ MonoBehaviour:
   attackRate: 2
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   _attackSound: {fileID: 1363665075}
 --- !u!82 &1363665077
 AudioSource:
