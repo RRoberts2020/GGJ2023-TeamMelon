@@ -9,6 +9,8 @@ namespace Platformer
         public PlayerController playerController;
         public Checkpoint checkpoint;
 
+        public UIAndSceneManagement buffAllocatorCheck;
+
         public void ChoiceOne()
         {
             playerController.movingSpeed = playerController.movingSpeed + 4;
