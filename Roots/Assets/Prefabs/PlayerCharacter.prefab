@@ -186,9 +186,9 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5c9f7908aa252e34eb0b2d851dde3165, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -211,8 +211,11 @@ MonoBehaviour:
   initialJumpCount: 1
   facingRight: 0
   deathState: 0
-  _isGrounded: 0
-  groundCheck: {fileID: 74074378383241360}
+  isGrounded: 0
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _groundCheckDistance: 1.2
   rb: {fileID: 74074378339150151}
   _jumpSound: {fileID: 0}
   _walkSound: {fileID: 0}

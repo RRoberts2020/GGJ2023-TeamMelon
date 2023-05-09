@@ -21,9 +21,12 @@ namespace Platformer
         public bool facingRight = false;
         [HideInInspector]
         public bool deathState = false;
-
-        public bool _isGrounded;
-        public Transform groundCheck;
+   
+        [Header("Ground Checks")]
+        public bool isGrounded;
+        [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private float _groundCheckDistance = 0.7f;
+        [Space]
 
         public Rigidbody2D rb;
         private Animator _animator;
@@ -62,7 +65,7 @@ namespace Platformer
         {
             if (context.performed)
             {
-                if (_isGrounded)
+                if (isGrounded)
                 {
                     _walkSound.Play();
                 }
@@ -103,14 +106,18 @@ namespace Platformer
 
         private void CheckGround()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, 0.2f);
-            _isGrounded = colliders.Length > 1;
-          
-            if (_isGrounded)
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, _groundCheckDistance, _groundLayer);
+
+            if (isGrounded)
             {
                 _jumpCount = 0;
             }
-          
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - _groundCheckDistance, transform.position.z));
         }
     }
 }

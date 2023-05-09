@@ -42,7 +42,7 @@ namespace Platformer
         {
             if (_makingChoice)
             {
-                if (playerController._isGrounded)
+                if (playerController.isGrounded)
                     playerController.rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
                 endGamePanel.SetActive(true);
                 Debug.Log("In trigger");

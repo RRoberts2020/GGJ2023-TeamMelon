@@ -5,14 +5,11 @@ using UnityEngine;
 public class KillTrigger : MonoBehaviour
 {
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-
-              GameObject.Destroy(collision.gameObject);
-         
+            PlayerManager.instance.PlayerDeath();
         }
-          
     }
 }

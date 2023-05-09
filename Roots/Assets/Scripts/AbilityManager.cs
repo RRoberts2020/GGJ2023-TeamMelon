@@ -13,7 +13,6 @@ namespace Platformer
         {
             playerController.movingSpeed = playerController.movingSpeed + 4;
             checkpoint.endGamePanel.SetActive(false);
-            playerController.rb.constraints = RigidbodyConstraints2D.None;
             Destroy(checkpoint._checkPoint);
         }
 
@@ -21,7 +20,6 @@ namespace Platformer
         {
             playerController.initialJumpCount++;
             checkpoint.endGamePanel.SetActive(false);
-            playerController.rb.constraints = RigidbodyConstraints2D.None;
             Destroy(checkpoint._checkPoint);
         }
     }
