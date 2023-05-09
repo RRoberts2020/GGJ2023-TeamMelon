@@ -43,18 +43,15 @@ namespace Platformer
         private void FixedUpdate()
         {
             CheckGround();
-        }
 
-        void Update()
-        {
             rb.velocity = new Vector2(horizontal * movingSpeed, rb.velocity.y);
 
-            if(facingRight == true && horizontal > 0)
+            if (facingRight == true && horizontal > 0)
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
             }
-            else if(facingRight == false && horizontal < 0)
+            else if (facingRight == false && horizontal < 0)
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
                 Flip();
