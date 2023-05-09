@@ -15,6 +15,8 @@ namespace Platformer
             playerController.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             playerController.movingSpeed = playerController.movingSpeed + 4;
+            playerController.movingFPS = 16f;
+
             checkpoint.endGamePanel.SetActive(false);
             Destroy(checkpoint._checkPoint);
         }

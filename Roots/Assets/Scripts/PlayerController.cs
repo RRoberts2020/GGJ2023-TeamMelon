@@ -28,9 +28,13 @@ namespace Platformer
         [SerializeField] private float _groundCheckDistance = 0.7f;
         [Space]
 
+        [Header("Visuals")]
+        public float movingFPS = 10f;
+        [SerializeField] private float _idleFPS = 0f;
+        private MeshRenderer _mr;
+        private Material _walkingMaterial;
+
         public Rigidbody2D rb;
-        private Animator _animator;
-        private GameManager _gameManager;
 
         public AudioSource _jumpSound;
         public AudioSource _walkSound;
@@ -41,6 +45,9 @@ namespace Platformer
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+
+            _mr = GetComponent<MeshRenderer>();
+            _walkingMaterial = _mr.material;
         }
 
         private void FixedUpdate()
@@ -48,6 +55,16 @@ namespace Platformer
             CheckGround();
 
             rb.velocity = new Vector2(horizontal * movingSpeed, rb.velocity.y);
+
+            if (horizontal == 0 || !isGrounded)
+            {
+                _walkingMaterial.SetFloat("_FPS", _idleFPS);
+            }
+
+            else
+            {
+                _walkingMaterial.SetFloat("_FPS", movingFPS);
+            }
 
             if (facingRight == true && horizontal > 0)
             {
