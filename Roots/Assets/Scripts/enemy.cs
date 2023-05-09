@@ -19,16 +19,9 @@ public class enemy : MonoBehaviour
 
     public AudioSource _attackSound;
 
-
     void Start()
     {
         currentHealth = maxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void TakeDamage(int damage)
@@ -53,15 +46,17 @@ public class enemy : MonoBehaviour
 
     void EnemyAttack()
     {
-        Debug.Log("Enemy attacked");
+        //Debug.Log("Enemy attacked");
         if (Time.time >= nextAttackTime)
         {
-            Collider2D[] playerHit = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+            Collider2D[] attackHits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
 
-            foreach (Collider2D player in playerHit)
+            for (int i = 0; i < attackHits.Length; ++i)
             {
-                Debug.Log("Made it to foreach loop");
-                player.GetComponent<PlayerManager>().TakeDamage(enemyAttackDamage);
+                if (attackHits[i].gameObject.CompareTag("Player"))
+                {
+                    PlayerManager.instance.TakeDamage(enemyAttackDamage);
+                }
             }
             _attackSound.Play();
         }
@@ -81,7 +76,7 @@ public class enemy : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Dead");
+        //Debug.Log("Dead");
         AudioSource.PlayClipAtPoint(_DieSound, transform.position);
         Destroy(gameObject);
     }

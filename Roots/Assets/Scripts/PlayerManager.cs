@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour
+public  class PlayerManager : MonoBehaviour
 {
     public GameObject player;
     public AudioClip[] playerHurt;
@@ -32,16 +32,21 @@ public class PlayerManager : MonoBehaviour
 
     #endregion
 
-    // Start is called before the first frame update
-    public void Start()
+    public static PlayerManager instance { get; private set; }
+    private void Awake()
     {
-        //checkpoint testing
+        // If there is an instance, and it's not me, delete myself.
+
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
         levelManager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<LevelManager>();
-        //transform.position = levelManager.lastPlayerPos;
-
-       
-
-       // isPlayerDead = false;
     }
 
     // Update is called once per frame
@@ -87,10 +92,10 @@ public class PlayerManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        
-       // isPlayerDead = true;
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        // isPlayerDead = true;
+        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 
 
