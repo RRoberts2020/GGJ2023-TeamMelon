@@ -42,6 +42,8 @@ namespace Platformer
 
         public AudioSource _landSound;
 
+        private WaitForSeconds _cachedWaitForSeconds;
+
 
         void Start()
         {
@@ -57,6 +59,8 @@ namespace Platformer
             _mr.material = _walkingMaterial;
 
             RandomiseMaterialAttributes();
+
+            _cachedWaitForSeconds = new WaitForSeconds(0.33f);
         }
 
         #region [Randomise Character Appearance]
@@ -198,6 +202,13 @@ namespace Platformer
             {
                 _jumpCount = 0;
             }
+        }
+
+        public IEnumerator PlayAttackAnimation()
+        {
+            _mr.material = _attackingMaterial;
+            yield return _cachedWaitForSeconds;
+            _mr.material = _walkingMaterial;
         }
 
         private void OnDrawGizmos()

@@ -16,12 +16,18 @@ public class PlayerCombat : MonoBehaviour
 
     public AudioSource _attackSound;
 
-    void Start()
+    private Platformer.PlayerController _playerController;
+
+    private void Start()
     {
-        
+        _playerController = GetComponent<Platformer.PlayerController>();
     }
 
-    // Update is called once per frame
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
     void Update()
     {
         if(Time.time >= nextAttackTime)
@@ -33,17 +39,7 @@ public class PlayerCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
-        else
-        {
-
-        }
-
-
-
-
-
     }
-
  
     void Attack()
     {
@@ -53,11 +49,12 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<enemy>().TakeDamage(playerAttackDamage);
         }
+
+        StartCoroutine(_playerController.PlayAttackAnimation());
     }
 
     private void OnDrawGizmosSelected()
     {
-
         if(attackPoint == null)
         {
             return;
