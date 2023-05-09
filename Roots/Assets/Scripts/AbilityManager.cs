@@ -11,6 +11,9 @@ namespace Platformer
 
         public void ChoiceOne()
         {
+            playerController.rb.constraints = RigidbodyConstraints2D.None;
+            playerController.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
             playerController.movingSpeed = playerController.movingSpeed + 4;
             checkpoint.endGamePanel.SetActive(false);
             Destroy(checkpoint._checkPoint);
@@ -18,6 +21,9 @@ namespace Platformer
 
         public void ChoiceTwo()
         {
+            playerController.rb.constraints = RigidbodyConstraints2D.None;
+            playerController.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
             playerController.initialJumpCount++;
             checkpoint.endGamePanel.SetActive(false);
             Destroy(checkpoint._checkPoint);
