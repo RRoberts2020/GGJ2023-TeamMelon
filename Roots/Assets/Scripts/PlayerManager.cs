@@ -12,7 +12,6 @@ public  class PlayerManager : MonoBehaviour
     public Sprite fullHearts;
     public Image[] hearts;
 
-
     #region [Varibles]
 
     // int
@@ -75,8 +74,6 @@ public  class PlayerManager : MonoBehaviour
 
 
         }
-
-  
     }
 
     public void TakeDamage(int damage)

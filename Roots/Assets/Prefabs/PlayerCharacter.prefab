@@ -120,7 +120,7 @@ Transform:
   - {fileID: 74074377763782385}
   - {fileID: 1825421617}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &74074378339150155
 MeshFilter:
@@ -216,8 +216,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _groundCheckDistance: 1.2
-  _movingFPS: 10
+  movingFPS: 10
   _idleFPS: 0
+  _attackingMaterial: {fileID: 2100000, guid: 38ed9791294a29c40b5d94903c57e877, type: 2}
   rb: {fileID: 74074378339150151}
   _jumpSound: {fileID: 0}
   _walkSound: {fileID: 0}
